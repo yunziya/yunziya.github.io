@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://yunziya.github.io</id>
+    <title>云姿的小屋</title>
+    <updated>2021-08-24T11:49:37.891Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://yunziya.github.io"/>
+    <link rel="self" href="https://yunziya.github.io/atom.xml"/>
+    <subtitle>学而时习之，不亦说乎...</subtitle>
+    <logo>https://yunziya.github.io/images/avatar.png</logo>
+    <icon>https://yunziya.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, 云姿的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[cscscs ]]></title>
+        <id>https://yunziya.github.io/post/cscscs/</id>
+        <link href="https://yunziya.github.io/post/cscscs/">
+        </link>
+        <updated>2021-08-24T11:48:13.000Z</updated>
+    </entry>
+</feed>
