@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yunziya.github.io</id>
     <title>云姿的小屋</title>
-    <updated>2021-08-24T12:14:50.518Z</updated>
+    <updated>2021-08-24T12:33:11.844Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yunziya.github.io"/>
     <link rel="self" href="https://yunziya.github.io/atom.xml"/>
@@ -12,9 +12,37 @@
     <rights>All rights reserved 2021, 云姿的小屋</rights>
     <entry>
         <title type="html"><![CDATA[手机使用TG]]></title>
-        <id>https://yunziya.github.io/post/cscscs/</id>
-        <link href="https://yunziya.github.io/post/cscscs/">
+        <id>https://yunziya.github.io/post/dya/</id>
+        <link href="https://yunziya.github.io/post/dya/">
         </link>
         <updated>2021-08-24T11:48:13.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<!-- more -->
+<p>Step 1 下载并安装翻墙软件<br>
+如果手机中有翻墙软件，请跳过这一步。<br>
+安卓手机：在浏览器中访问网址 https://j.mp/fgv88 下载自由门，或访问网址 https://git.io/vEJlj 下载无界浏览。国产浏览器会阻止访问，建议使用谷歌等浏览器。下载后把软件解压出来，安装后缀为 apk 的文件，打开软件连接翻墙软件，显示主页表明连接成功。<br>
+苹果手机：先点链接安装 TestFlight 软件 https://apps.apple.com/us/app/testflight/id899247664<br>
+然后点链接安装无界浏览 https://testflight.apple.com/join/iuwrpqqo</p>
+<p>Step  2 下载并安装telegram<br>
+安卓手机：在浏览器中访问 https://telegram.org/dl/android/apk 下载安装软件<br>
+苹果手机：在应用商店中搜索下载 Telegram 并安装</p>
+<p>Step 3 准备非实名手机号码<br>
+自己的实名手机号是不安全的，要注册 telegram 发言必须使用非实名手机号。有三种方法：<br>
+第一是注册一个 textnow 账号，这个需要安装 textnow 注册账号<br>
+第二是购买一个 Google Voice 手机号https://t.me/tg_InternetSecurity/2371<br>
+第三是使用在线接码平台 https://t.me/tg_InternetSecurity/1926 （这种方法成功率较低）</p>
+<p>Step 4 使用手机号码注册telegram<br>
+把获得的手机号填入 telegram 的注册界面，接收验证码后登录成功。</p>
+<p>Step 5 语言改为中文<br>
+点右上角的搜索按钮搜索 @zh_CN ，选择 “Telegram-zh_CN 简体中文语言包”，点击倒数第二条帖子上的 “&gt;&gt;&gt; 点击此处安装语言包 &lt;&lt;&lt;”，重启软件设置成功。如果还想更换其他有意思的语言包，可以在 telegram 里面访问 https://t.me/tg_InternetSecurity/996</p>
+<p>Step 6 安全设置<br>
+在设置 -&gt; 隐私与安全中：【手机号码】一项，“谁可以看到我的手机号码”设为“不允许任何人”，“谁可以通过我的手机号码找到我”设为“我的联系人”；其余的【最后上线&amp;在线】、【引用转发来源】、【通话】、【邀请权限控制】依次类似设置。<br>
+开启两步验证，防止坏人恶意登录注销账号，这个两步验证需要记住，在新设备上登录的时候需要用到，一旦遗忘可以通过密保邮箱找回。如果要设置密保邮箱，建议设置国外的邮箱。<br>
+特别注意：telegram 上有很多电信诈骗团伙，如果有人私聊给你发送不明文件，千万不要点击。</p>
+<p>Step 7 加入 telegram 群组和频道<br>
+我们收集了一系列群组和频道 https://t.me/tg_InternetSecurity/1261<br>
+当然你也可以在网上搜寻更多你喜欢的群组和频道。</p>
+<p>说明：除第一步不需要翻墙外，其余所有步骤全部需要翻墙操作。</p>
+]]></content>
     </entry>
 </feed>
