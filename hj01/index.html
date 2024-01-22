@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Golang--合集 | An&#39;Blog</title>
+<link rel="shortcut icon" href="https://wxxanan.top/favicon.ico?v=1705912363740">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wxxanan.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Golang--合集 | An&#39;Blog - Atom Feed" href="https://wxxanan.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Golang基础
+Go--变量：点击链接
+Go--常量：点击链接
+Go--数据类型：点击链接
+Go--运算符：点击链接
+Go--输入：点击链接
+Go--流程控制：点击链接
+Go--函数：点击链接
+待补充...
+Golang进阶
+待更新......" />
+    <meta name="keywords" content="合集" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wxxanan.top">
+  <img class="avatar" src="https://wxxanan.top/images/avatar.png?v=1705912363740" alt="">
+  </a>
+  <h1 class="site-title">
+    An&#39;Blog
+  </h1>
+  <p class="site-description">
+    哀吾生之须臾，羡长江之无穷
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tag
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/yunziya" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Golang--合集
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-01-22
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://wxxanan.top/QcRNNUii9/" class="post-tag">
+                  # 合集
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h2 id="golang基础">Golang基础</h2>
+<p>Go--变量：<a href="https://wxxanan.top/go01">点击链接</a><br>
+Go--常量：<a href="https://wxxanan.top/go02">点击链接</a><br>
+Go--数据类型：<a href="https://wxxanan.top/go03">点击链接</a><br>
+Go--运算符：<a href="https://wxxanan.top/go04">点击链接</a><br>
+Go--输入：<a href="https://wxxanan.top/go05">点击链接</a><br>
+Go--流程控制：<a href="https://wxxanan.top/go06">点击链接</a><br>
+Go--函数：<a href="https://wxxanan.top/go07">点击链接</a><br>
+<strong>待补充...</strong></p>
+<h2 id="golang进阶">Golang进阶</h2>
+<p><strong>待更新...</strong></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#golang%E5%9F%BA%E7%A1%80">Golang基础</a></li>
+<li><a href="#golang%E8%BF%9B%E9%98%B6">Golang进阶</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wxxanan.top/go07/">
+              <h3 class="post-title">
+                Golang基础--函数
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/yunziya" target="_blank">Dermain</a>
+  <a class="rss" href="https://wxxanan.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

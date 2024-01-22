@@ -1,0 +1,273 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Golang基础--流程控制 | An&#39;Blog</title>
+<link rel="shortcut icon" href="https://wxxanan.top/favicon.ico?v=1705912363740">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wxxanan.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Golang基础--流程控制 | An&#39;Blog - Atom Feed" href="https://wxxanan.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="GoTo
+在Go语言中，goto语句将控制权转移到被标记的语句。语句通常与标签一起使用。以下是语句的用法示例：
+package main
+
+import fmt
+
+func main() {
+    i := 0
+loop: // 定义标签..." />
+    <meta name="keywords" content="编程,Golang" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wxxanan.top">
+  <img class="avatar" src="https://wxxanan.top/images/avatar.png?v=1705912363740" alt="">
+  </a>
+  <h1 class="site-title">
+    An&#39;Blog
+  </h1>
+  <p class="site-description">
+    哀吾生之须臾，羡长江之无穷
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tag
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/yunziya" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Golang基础--流程控制
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-01-21
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://wxxanan.top/kvgquE0Eh/" class="post-tag">
+                  # 编程
+                </a>
+              
+                <a href="https://wxxanan.top/Go/" class="post-tag">
+                  # Golang
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h3 id="goto">GoTo</h3>
+<p>在Go语言中，<code>goto</code>语句将控制权转移到被标记的语句。语句通常与标签一起使用。以下是语句的用法示例：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func main() {
+    i := 0
+loop: // 定义标签
+    if i &lt; 5 {
+        fmt.Println(i)
+        i++
+        goto loop // 转到标签loop处继续执行
+    }
+}
+
+</code></pre>
+<p>在上面的示例中，使用<code>goto</code>语句和标签<code>loop</code>来实现循环的功能。虽然语句在Go语言中不常用，但在某些特定情况下可能会用到。值得注意的是，在实际开发中，应避免滥用语句，以免影响代码可读性和可维护性。</p>
+<h3 id="if判断">IF判断</h3>
+<p>在Go语言中，使用<code>if</code>关键字进行条件判断。可以使用<code>else if</code>来添加额外的条件判断。</p>
+<pre><code class="language-go">age := 18
+if age &lt; 0 {
+    fmt.Println(年龄不能为负数)
+} else if age &lt; 18 {
+    fmt.Println(未成年人)
+} else {
+    fmt.Println(成年人)
+}
+
+</code></pre>
+<h3 id="if多重嵌套">IF多重嵌套</h3>
+<p>可以在<code>if</code>语句中嵌套其他的<code>if</code>语句，也可以在<code>if</code>语句中嵌套<code>switch</code>语句。</p>
+<pre><code class="language-go">x := 10
+y := 20
+if x &gt; 0 {
+    if y &gt; 15 {
+        fmt.Println(x大于0，y大于15)
+    } else {
+        fmt.Println(x大于0，y小于等于15)
+    }
+} else {
+    fmt.Println(x小于等于0)
+}
+
+</code></pre>
+<h3 id="switch判断">Switch判断</h3>
+<p>使用<code>switch</code>关键字进行多个条件判断。每个<code>case</code>可以包含多个条件。</p>
+<pre><code class="language-go">day := 3
+switch day {
+case 1, 2:
+    fmt.Println(工作日)
+case 3, 4:
+    fmt.Println(休息日)
+default:
+    fmt.Println(其他)
+}
+
+</code></pre>
+<h3 id="for循环">for循环</h3>
+<p>使用<code>for</code>关键字进行循环操作。可以使用<code>break</code>和<code>continue</code>关键字控制循环。</p>
+<pre><code class="language-go">for i := 0; i &lt; 5; i++ {
+    if i == 2 {
+        continue // 跳过本次循环
+    }
+    fmt.Println(i)
+    if i == 3 {
+        break // 结束循环
+    }
+}
+
+</code></pre>
+<h3 id="range循环">range循环</h3>
+<p>使用<code>range</code>关键字遍历数组、切片、字符串、map等。</p>
+<pre><code class="language-go">animals := map[string]string{cat: 猫, dog: 狗, bird: 鸟}
+for key, value := range animals {
+    fmt.Println(key, 的中文名是, value)
+}
+
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#goto">GoTo</a></li>
+<li><a href="#if%E5%88%A4%E6%96%AD">IF判断</a></li>
+<li><a href="#if%E5%A4%9A%E9%87%8D%E5%B5%8C%E5%A5%97">IF多重嵌套</a></li>
+<li><a href="#switch%E5%88%A4%E6%96%AD">Switch判断</a></li>
+<li><a href="#for%E5%BE%AA%E7%8E%AF">for循环</a></li>
+<li><a href="#range%E5%BE%AA%E7%8E%AF">range循环</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wxxanan.top/go05/">
+              <h3 class="post-title">
+                Golang基础--输入
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/yunziya" target="_blank">Dermain</a>
+  <a class="rss" href="https://wxxanan.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

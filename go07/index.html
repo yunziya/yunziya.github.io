@@ -1,0 +1,324 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Golang基础--函数 | An&#39;Blog</title>
+<link rel="shortcut icon" href="https://wxxanan.top/favicon.ico?v=1705912363740">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wxxanan.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Golang基础--函数 | An&#39;Blog - Atom Feed" href="https://wxxanan.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="函数的声明和调用
+函数声明包括函数名、参数列表和返回值类型列表。通过func 函数名(参数列表) (返回值类型列表)声明函数类型，然后在函数体中编写相应的代码。调用函数时只需使用函数名和相应的参数列表。示例代码如下：
+package mai..." />
+    <meta name="keywords" content="编程,Golang" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wxxanan.top">
+  <img class="avatar" src="https://wxxanan.top/images/avatar.png?v=1705912363740" alt="">
+  </a>
+  <h1 class="site-title">
+    An&#39;Blog
+  </h1>
+  <p class="site-description">
+    哀吾生之须臾，羡长江之无穷
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tag
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/yunziya" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Golang基础--函数
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-01-21
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://wxxanan.top/kvgquE0Eh/" class="post-tag">
+                  # 编程
+                </a>
+              
+                <a href="https://wxxanan.top/Go/" class="post-tag">
+                  # Golang
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h3 id="函数的声明和调用">函数的声明和调用</h3>
+<p>函数声明包括函数名、参数列表和返回值类型列表。通过<code>func 函数名(参数列表) (返回值类型列表)</code>声明函数类型，然后在函数体中编写相应的代码。调用函数时只需使用函数名和相应的参数列表。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func add(a, b int) int {
+    return a + b
+}
+
+func main() {
+    sum := add(3, 4)
+    fmt.Println(sum) // 输出 7
+}
+
+</code></pre>
+<h3 id="匿名函数">匿名函数</h3>
+<p>匿名函数可以直接定义并调用，也可以赋给变量后再调用。这种灵活性使得匿名函数在需要临时使用功能时非常方便。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func main() {
+    add := func(a, b int) int {
+        return a + b
+    }
+
+    sum := add(3, 4)
+    fmt.Println(sum) // 输出 7
+}
+
+</code></pre>
+<h3 id="形式参数和实际参数">形式参数和实际参数</h3>
+<p>形式参数是函数定义中的参数，实际参数是调用函数时提供的值。函数调用时，提供的值必须与形式参数的数量、类型和顺序相匹配。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func greet(name string) {
+    fmt.Println(Hello,  + name)
+}
+
+func main() {
+    greet(Alice) // 调用函数时，实际参数为 Alice
+}
+
+</code></pre>
+<h3 id="可变参数">可变参数</h3>
+<p>可变参数允许函数接受任意数量的参数。在函数内部，可变参数被当做一个切片来处理，可以通过循环等方式进行处理。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func sum(nums ...int) {
+    total := 0
+    for _, num := range nums {
+        total += num
+    }
+    fmt.Println(total)
+}
+
+func main() {
+    sum(1, 2, 3)       // 输出 6
+    sum(1, 2, 3, 4, 5) // 输出 15
+}
+
+</code></pre>
+<h3 id="值传递">值传递</h3>
+<p>在Go语言中，函数的参数传递都是值传递，即函数的形参会被赋予实参的一份复制，对形参的操作不会影响到实参。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func modify(num int) {
+    num = 10
+}
+
+func main() {
+    a := 5
+    modify(a)
+    fmt.Println(a) // 输出 5，a的值未受影响
+}
+
+</code></pre>
+<h3 id="引用传递">引用传递</h3>
+<p>如果要在函数中修改变量的值，可以使用指针作为参数，实现引用传递。通过传递变量的地址来操作变量本身，从而达到修改变量值的目的。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func modify(num *int) {
+    *num = 10
+}
+
+func main() {
+    a := 5
+    modify(&amp;a)
+    fmt.Println(a) // 输出 10，a的值被修改为10
+}
+
+</code></pre>
+<h3 id="递归函数">递归函数</h3>
+<p>递归函数是指在函数的定义中调用函数自身的一种函数。递归函数一般需要有一个结束条件，以避免无限递归。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func factorial(n int) int {
+    if n &lt;= 1 {
+        return 1
+    }
+    return n * factorial(n-1)
+}
+
+func main() {
+    fmt.Println(factorial(5)) // 输出 120
+}
+
+</code></pre>
+<h3 id="defer函数">Defer函数</h3>
+<p>defer语句用于延迟函数的执行，通常用于资源释放、文件关闭等操作。在函数返回之前，defer语句会将其后面的函数延迟执行。示例代码如下：</p>
+<pre><code class="language-go">package main
+
+import fmt
+
+func main() {
+    defer fmt.Println(World)
+    fmt.Println(Hello,)
+}
+// 输出
+// Hello,
+// World
+
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E8%B0%83%E7%94%A8">函数的声明和调用</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">匿名函数</a></li>
+<li><a href="#%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0%E5%92%8C%E5%AE%9E%E9%99%85%E5%8F%82%E6%95%B0">形式参数和实际参数</a></li>
+<li><a href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0">可变参数</a></li>
+<li><a href="#%E5%80%BC%E4%BC%A0%E9%80%92">值传递</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92">引用传递</a></li>
+<li><a href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">递归函数</a></li>
+<li><a href="#defer%E5%87%BD%E6%95%B0">Defer函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wxxanan.top/go06/">
+              <h3 class="post-title">
+                Golang基础--流程控制
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/yunziya" target="_blank">Dermain</a>
+  <a class="rss" href="https://wxxanan.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

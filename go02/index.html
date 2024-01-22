@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Golang基础--常量 | An&#39;Blog</title>
+<link rel="shortcut icon" href="https://wxxanan.top/favicon.ico?v=1705912363740">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wxxanan.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Golang基础--常量 | An&#39;Blog - Atom Feed" href="https://wxxanan.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="概述
+Go语言中的常量是一种在程序执行过程中数值不会发生改变的标识符。常量可以是布尔型、数字型（整数、浮点数）、字符型等。在Go语言中，常量的数值必须是在编译期就能够确定的。
+常量的定义
+在Go语言中，使用const关键字声明常量，并且需要..." />
+    <meta name="keywords" content="编程,Golang" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wxxanan.top">
+  <img class="avatar" src="https://wxxanan.top/images/avatar.png?v=1705912363740" alt="">
+  </a>
+  <h1 class="site-title">
+    An&#39;Blog
+  </h1>
+  <p class="site-description">
+    哀吾生之须臾，羡长江之无穷
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tag
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/yunziya" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Golang基础--常量
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-01-20
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://wxxanan.top/kvgquE0Eh/" class="post-tag">
+                  # 编程
+                </a>
+              
+                <a href="https://wxxanan.top/Go/" class="post-tag">
+                  # Golang
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h3 id="概述">概述</h3>
+<p>Go语言中的常量是一种在程序执行过程中数值不会发生改变的标识符。常量可以是布尔型、数字型（整数、浮点数）、字符型等。在Go语言中，常量的数值必须是在编译期就能够确定的。</p>
+<h3 id="常量的定义">常量的定义</h3>
+<p>在Go语言中，使用<code>const</code>关键字声明常量，并且需要在声明的同时对常量进行赋值。</p>
+<pre><code class="language-go">// 定义一个整数常量
+const num int = 10
+
+// 定义一个字符串常量
+const greeting string = Hello, World!
+
+</code></pre>
+<h3 id="特殊常量">特殊常量</h3>
+<p>在Go语言中，有一些特殊的常量和预定义的常量，如<code>true</code>和<code>false</code>等。</p>
+<pre><code class="language-go">// 布尔类型的常量
+const (
+    True  = true
+    False = false
+)
+
+</code></pre>
+<h3 id="枚举类型">枚举类型</h3>
+<p>在Go语言中，常量可以作为枚举类型来使用，用于派生常量的值会在前一个常量值的基础上增加1。</p>
+<pre><code class="language-go">// 枚举类型的常量
+const (
+    Monday = iota
+    Tuesday
+    Wednesday
+    Thursday
+    Friday
+)
+
+</code></pre>
+<h3 id="无类型常量">无类型常量</h3>
+<p>在Go语言中，常量可以是无类型的，并且有一些特殊的规则。无类型常量的类型可以根据上下文隐式转换。</p>
+<pre><code class="language-go">// 无类型常量
+const a = 10
+const b = 3.14
+const c = Hello
+
+// 类型推断
+var x int = a   // a被推断为int类型
+var y float64 = b  // b被推断为float64类型
+var z string = c   // c被推断为string类型
+
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+<li><a href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89">常量的定义</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E5%B8%B8%E9%87%8F">特殊常量</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B">枚举类型</a></li>
+<li><a href="#%E6%97%A0%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F">无类型常量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wxxanan.top/go01/">
+              <h3 class="post-title">
+                Golang基础--变量
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/yunziya" target="_blank">Dermain</a>
+  <a class="rss" href="https://wxxanan.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

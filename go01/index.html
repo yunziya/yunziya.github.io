@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Golang基础--变量 | An&#39;Blog</title>
+<link rel="shortcut icon" href="https://wxxanan.top/favicon.ico?v=1705912363740">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wxxanan.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Golang基础--变量 | An&#39;Blog - Atom Feed" href="https://wxxanan.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="概述
+在GO语言中，变量被定义为程序中存储和操作数据的基本单元。它们可以存储各种类型的值，如整数、浮点数、字符串和布尔值。变量可以被命名，并且可以被重新分配和修改，因此在程序中具有很高的灵活性。这使得GO语言中的变量成为了非常重要的组成部分..." />
+    <meta name="keywords" content="编程,Golang" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wxxanan.top">
+  <img class="avatar" src="https://wxxanan.top/images/avatar.png?v=1705912363740" alt="">
+  </a>
+  <h1 class="site-title">
+    An&#39;Blog
+  </h1>
+  <p class="site-description">
+    哀吾生之须臾，羡长江之无穷
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tag
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/yunziya" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Golang基础--变量
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-01-20
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://wxxanan.top/kvgquE0Eh/" class="post-tag">
+                  # 编程
+                </a>
+              
+                <a href="https://wxxanan.top/Go/" class="post-tag">
+                  # Golang
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h3 id="概述">概述</h3>
+<p>在GO语言中，变量被定义为程序中存储和操作数据的基本单元。它们可以存储各种类型的值，如整数、浮点数、字符串和布尔值。变量可以被命名，并且可以被重新分配和修改，因此在程序中具有很高的灵活性。这使得GO语言中的变量成为了非常重要的组成部分，可以帮助程序实现各种复杂的功能和逻辑操作。</p>
+<h3 id="变量的定义">变量的定义</h3>
+<ul>
+<li>使用<code>var</code>关键字定义变量：</li>
+</ul>
+<pre><code class="language-go">var name string
+var age int
+var isMale bool
+</code></pre>
+<ul>
+<li>使用<code>:=</code>操作符定义变量（简短声明）：</li>
+</ul>
+<pre><code class="language-go">name := Alice
+age := 30
+isMale := true
+</code></pre>
+<p>需要注意使用<code>var</code>关键字定义变量需要写出类型再赋值，用<code>:=</code>操作符定义变量不需要写出类型，会根据值去自动推导类型。</p>
+<h3 id="变量的交换">变量的交换</h3>
+<p>在GO语言中，可以使用临时变量的方式来交换两个变量的值。下面是一个示例：</p>
+<pre><code class="language-go">// 定义两个变量并初始化
+a := 10
+b := 20
+
+// 交换变量的值
+temp := a
+a = b
+b = temp
+
+// 输出交换后的值
+fmt.Println(a:, a)  // 输出20
+fmt.Println(b:, b)  // 输出10
+</code></pre>
+<p>通过使用临时变量，我们可以轻松地交换两个变量的值。</p>
+<h3 id="变量的作用域">变量的作用域</h3>
+<ol>
+<li>全局作用域：在函数之外定义的变量具有全局作用域，可以在程序的任何地方被访问和使用。</li>
+<li>函数作用域：在函数内部定义的变量具有函数作用域，只能在相应的函数内部被访问和使用。</li>
+<li>块级作用域：在代码块（如if语句、for循环）内部定义的变量具有块级作用域，只能在相应的代码块内部被访问和使用。</li>
+</ol>
+<h3 id="匿名变量">匿名变量</h3>
+<p>在Go语言中，匿名变量（anonymous variables）是一个特殊的概念，它主要用于忽略某个值或者占位，通常用下划线<code>_</code>表示。匿名变量在函数返回多个值时非常有用，当我们只关心其中部分返回值，而不关心其他返回值时，可以使用匿名变量来忽略这些不关心的值。</p>
+<p>例如，如果一个函数返回了多个值，而我们只关心其中一个值，可以使用匿名变量来忽略其他不关心的返回值：</p>
+<pre><code class="language-go">func getValue() (int, int) {
+    return 10, 20
+}
+
+func main() {
+    a, _ := getValue()  // 使用匿名变量来忽略第二个返回值
+    fmt.Println(a)       // 输出第一个返回值，忽略了第二个返回值
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89">变量的定义</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BA%A4%E6%8D%A2">变量的交换</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F">变量的作用域</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%8F%98%E9%87%8F">匿名变量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/yunziya" target="_blank">Dermain</a>
+  <a class="rss" href="https://wxxanan.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
